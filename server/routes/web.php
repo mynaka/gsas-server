@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::post('/createApplicantAcademicInfoMany', 'ApplicantController@createApplicantAcademicInfoMany');
+Route::post('/createApplicantAddressMany', 'ApplicantController@createApplicantAddressMany');
