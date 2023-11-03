@@ -32,7 +32,7 @@ class ApplicantAcademicInfoController extends Controller {
             $basicInfo = ApplicantBasicInfo::findOrFail($applicant_basic_info_id);
             $basicInfo->academicInfo()->save($academicInfo);
     
-            return response()->json(['status' => 200, 'error' => '', 'data' => []]);
+            return response()->json(['status' => 200, 'error' => '', 'data' => [$academicInfo]]);
         } catch (\Exception $e) {
             return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
         }

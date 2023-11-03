@@ -23,4 +23,9 @@ class ApplicantBasicInfo extends Model {
     public function academicInfo() {
         return $this->hasOne(ApplicantAcademicInfo::class);
     }
+
+    //Define the relationship with Applicantddress
+    public function address() {
+        return $this->hasOne(ApplicantAddress::class);
+    }
 }

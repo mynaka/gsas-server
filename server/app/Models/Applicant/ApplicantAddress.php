@@ -4,9 +4,9 @@ namespace App\Models\Applicant;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApplicantAddressInfo extends Model
+class ApplicantAddress extends Model
 {
-    protected $table = 'applicant_address_info';
+    protected $table = 'applicant_address';
 
     protected $fillable = [
         'applicant_basic_info_id',

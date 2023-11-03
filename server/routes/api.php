@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Applicant\ApplicantBasicInfoController;
+use App\Http\Controllers\Applicant\ApplicantAcademicInfoController;
+use App\Http\Controllers\Applicant\ApplicantAddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/testcreateBasicInfo', [ApplicantBasicInfoController::class, 'createApplicantBasicInfoMany']);
+Route::post('/create-basic-info', [ApplicantBasicInfoController::class, 'createApplicantBasicInfo']) -> name('applicants.create_basic');
+Route::post('/test', [ApplicantAddressController::class, 'createApplicantAddress']);

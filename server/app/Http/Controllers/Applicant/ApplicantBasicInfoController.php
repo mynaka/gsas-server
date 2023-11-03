@@ -33,7 +33,7 @@ class ApplicantBasicInfoController extends Controller {
         try {
             $basicInfo->save(); // Save the model instance
 
-            return response()->json(['status' => 200, 'error' => '', 'data' => []]);
+            return response()->json(['status' => 200, 'error' => '', 'data' => [$basicInfo]]);
         } catch (\Exception $e) {
             return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
         }
