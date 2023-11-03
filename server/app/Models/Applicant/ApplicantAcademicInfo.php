@@ -16,9 +16,4 @@ class ApplicantAcademicInfo extends Model
         'year_received',
         'specialization_major',
     ];
-
-    // Define the relationship with ApplicantBasicInfo
-    public function applicantBasicInfo() {
-        return $this->belongsTo(ApplicantBasicInfo::class, 'applicant_basic_info_id', 'id');
-    }
 }
