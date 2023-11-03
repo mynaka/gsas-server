@@ -37,4 +37,20 @@ class ApplicantAcademicInfoController extends Controller {
             return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
         }
     }
+
+    /**
+     * READ academic information of the applicant with applicant_basic_info_id = applicantId
+     */
+    public function getApplicantAcademicInfo(Request $request, $applicantId) {
+        try {
+            $academicInfo = ApplicantAcademicInfo::where('applicant_basic_info_id', $applicantId)->first();
+            if ($academicInfo) {
+                return response()->json(['status' => 200, 'error' => '', 'data' => $academicInfo]);
+            } else {
+                return response()->json(['status' => 404, 'error' => 'Applicant not found', 'data' => null]);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
+        }
+    }
 }
