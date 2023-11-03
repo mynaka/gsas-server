@@ -18,8 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/applicants/createBasicInfo', [ApplicantBasicInfoController::class, 'createApplicantBasicInfoMany']);
-Route::group(['prefix' => 'applicants'], function () {
-    Route::get('/createBasicInfo', [ApplicantBasicInfoController::class, 'createApplicantBasicInfo'])->name('applicants.create_basic');
-    Route::get('/basicInfo/{id}', [ApplicantBasicInfoController::class, 'getApplicantBasicInfo'])->name('applicants.get_basic');
+Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function () {
+    Route::post('/create-basic-info', [ApplicantBasicInfoController::class, 'createApplicantBasicInfo']) -> name('applicants.create_basic');
+
+    Route::group(['prefix' => '{id}'], function () {
+        Route::get('/basic-info', [ApplicantBasicInfoController::class, 'getApplicantBasicInfo']) -> name('applicants.get_basic');
+    });
 });
