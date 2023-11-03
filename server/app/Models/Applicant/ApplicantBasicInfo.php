@@ -4,8 +4,7 @@ namespace App\Models\Applicant;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApplicantBasicInfo extends Model
-{
+class ApplicantBasicInfo extends Model {
     protected $table = 'applicant_basic_info';
     protected $primaryKey = 'id';
 
@@ -19,4 +18,9 @@ class ApplicantBasicInfo extends Model
         'citizenship',
         'civil_status',
     ];
+
+    // Define the relationship with ApplicantAcademicInfo
+    public function academicInfo() {
+        return $this->hasOne(ApplicantAcademicInfo::class);
+    }
 }
