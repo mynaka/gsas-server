@@ -40,7 +40,7 @@ class ApplicantBasicInfoController extends Controller {
     }
 
     /**
-     * READ basic information of the applicant
+     * READ basic information of the applicant with id = applicantId
      */
     public function getApplicantBasicInfo(Request $request, $applicantId) {
         try {
