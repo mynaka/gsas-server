@@ -10,7 +10,7 @@ class ApplicantBasicInfoController extends Controller {
     /**
      * CREATE basic information for the applicant
      */
-    public function createApplicantBasicInfoMany(Request $request) {
+    public function createApplicantBasicInfo(Request $request) {
         $first_name = $request->input('first_name');
         $middle_name = $request->input('middle_name');
         $last_name = $request->input('last_name');
@@ -34,6 +34,22 @@ class ApplicantBasicInfoController extends Controller {
             $basicInfo->save(); // Save the model instance
 
             return response()->json(['status' => 200, 'error' => '', 'data' => []]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
+        }
+    }
+
+    /**
+     * READ basic information of the applicant
+     */
+    public function getApplicantBasicInfo(Request $request, $applicantId) {
+        try {
+            $applicantInfo = ApplicantBasicInfo::find($applicantId);
+            if ($applicantInfo) {
+                return response()->json(['status' => 200, 'error' => '', 'data' => $applicantInfo]);
+            } else {
+                return response()->json(['status' => 404, 'error' => 'Applicant not found', 'data' => null]);
+            }
         } catch (\Exception $e) {
             return response()->json(['status' => 500, 'error' => 'Database error', 'data' => []]);
         }
