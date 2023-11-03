@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Applicant\ApplicantBasicInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/createApplicantAcademicInfoMany', 'ApplicantController@createApplicantAcademicInfoMany');
-Route::post('/createApplicantAddressMany', 'ApplicantController@createApplicantAddressMany');
+Route::post('/createBasicInfo', [ApplicantBasicInfoController::class, 'createApplicantBasicInfoMany']);
