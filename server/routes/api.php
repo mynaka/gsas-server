@@ -46,6 +46,6 @@ Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function ()
         Route::get('/employment', [ApplicantEmployerInfoController::class, 'getApplicantEmployerInfo']) -> name('applicants.employer');
         Route::get('/organizations', [ApplicantOrgMembershipInfoController::class, 'getApplicantOrgMembershipInfo']) -> name('applicants.org');
         Route::get('/scholarships', [ApplicantScholarshipInfoController::class, 'getApplicantScholarshipInfo']) -> name('applicants.scholarship');
-        Route::get('/misc', [ApplicantOtherInfoController::class, 'createApplicantOtherInfo']) -> name('applicants.misc');
+        Route::get('/misc', [ApplicantOtherInfoController::class, 'getApplicantOtherInfo']) -> name('applicants.misc');
     });
 });
