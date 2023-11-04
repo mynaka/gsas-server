@@ -6,6 +6,7 @@ use App\Http\Controllers\Applicant\ApplicantBasicInfoController;
 use App\Http\Controllers\Applicant\ApplicantAcademicInfoController;
 use App\Http\Controllers\Applicant\ApplicantAddressController;
 use App\Http\Controllers\Applicant\ApplicantContactInfoController;
+use App\Http\Controllers\Applicant\ApplicantEmployerInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/create-basic-info', [ApplicantBasicInfoController::class, 'createApplicantBasicInfo']) -> name('applicants.create_basic_api');
 Route::post('/create-contact-info', [ApplicantContactInfoController::class, 'createApplicantContactInfo']) -> name('applicants.create_contact_api');
+Route::post('/create-employer-info', [ApplicantEmployerInfoController::class, 'createApplicantEmployerInfo']) -> name('applicants.create_employer_api');

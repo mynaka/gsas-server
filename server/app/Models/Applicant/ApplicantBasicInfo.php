@@ -32,4 +32,8 @@ class ApplicantBasicInfo extends Model {
     public function contactInfo() {
         return $this->hasMany(ApplicantContactInfo::class);
     }
+
+    public function employerInfo() {
+        return $this->hasMany(ApplicantContactInfo::class);
+    }
 }

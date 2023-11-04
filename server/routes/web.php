@@ -5,6 +5,7 @@ use App\Http\Controllers\Applicant\ApplicantBasicInfoController;
 use App\Http\Controllers\Applicant\ApplicantAcademicInfoController;
 use App\Http\Controllers\Applicant\ApplicantAddressController;
 use App\Http\Controllers\Applicant\ApplicantContactInfoController;
+use App\Http\Controllers\Applicant\ApplicantEmployerInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function ()
     Route::post('/create-academic-info', [ApplicantAcademicInfoController::class, 'createApplicantAcademicInfo']) -> name('applicants.create_academic');
     Route::post('/create-address', [ApplicantAddressController::class, 'createApplicantAddress']) -> name('applicants.create_address');
     Route::post('/create-contact-info', [ApplicantContactInfoController::class, 'createApplicantContactInfo']) -> name('applicants.create_contact');
+    Route::post('/create-employer-info', [ApplicantEmployerInfoController::class, 'createApplicantEmployerInfo']) -> name('applicants.create_employer');
 
     //GET routes (/applicants/{id}/<endpoint>)
     Route::group(['prefix' => '{id}'], function () {
@@ -34,5 +36,6 @@ Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function ()
         Route::get('/academic-info', [ApplicantAcademicInfoController::class, 'getApplicantAcademicInfo']) -> name('applicants.get_academic');
         Route::get('/address', [ApplicantAddressController::class, 'getApplicantAddress']) -> name('applicants.get_address');
         Route::get('/contact-info', [ApplicantContactInfoController::class, 'getApplicantContactInfo']) -> name('applicants.get_contact');
+        Route::get('/employer-info', [ApplicantEmployerInfoController::class, 'getApplicantEmployerInfo']) -> name('applicants.employer');
     });
 });
