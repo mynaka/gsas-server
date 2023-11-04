@@ -4,8 +4,7 @@ namespace App\Models\Applicant;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApplicantAcademicInfo extends Model
-{
+class ApplicantAcademicInfo extends Model {
     protected $table = 'applicant_academic_info';
 
     protected $fillable = [
@@ -16,4 +15,9 @@ class ApplicantAcademicInfo extends Model
         'year_received',
         'specialization_major',
     ];
+
+    // Define the relationship with ApplicantBasicInfo
+    public function applicantBasicInfo() {
+        return $this->belongsTo(ApplicantBasicInfo::class, 'applicant_basic_info_id', 'id');
+    }
 }

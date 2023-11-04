@@ -4,8 +4,7 @@ namespace App\Models\Applicant;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApplicantAddress extends Model
-{
+class ApplicantAddress extends Model {
     protected $table = 'applicant_address';
 
     protected $fillable = [
