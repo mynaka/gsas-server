@@ -8,6 +8,7 @@ use App\Http\Controllers\Applicant\ApplicantAddressController;
 use App\Http\Controllers\Applicant\ApplicantContactInfoController;
 use App\Http\Controllers\Applicant\ApplicantEmployerInfoController;
 use App\Http\Controllers\Applicant\ApplicantOrgMembershipInfoController;
+use App\Http\Controllers\Applicant\ApplicantScholarshipInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('/create-basic-info', [ApplicantBasicInfoController::class, 'createA
 Route::post('/create-contact-info', [ApplicantContactInfoController::class, 'createApplicantContactInfo']) -> name('applicants.create_contact_api');
 Route::post('/create-employer-info', [ApplicantEmployerInfoController::class, 'createApplicantEmployerInfo']) -> name('applicants.create_employer_api');
 Route::post('/create-org-info', [ApplicantOrgMembershipInfoController::class, 'createApplicantOrgMembershipInfo']) -> name('applicants.create_org_api');
+Route::post('/create-scholarship-info', [ApplicantScholarshipInfoController::class, 'createApplicantScholarshipInfo']) -> name('applicants.create_scholarship_api');
