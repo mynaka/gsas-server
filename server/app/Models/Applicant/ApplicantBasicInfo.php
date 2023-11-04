@@ -52,4 +52,8 @@ class ApplicantBasicInfo extends Model {
     public function publicationInfo() {
         return $this->hasMany(ApplicantPublicationInfo::class);
     }
+
+    public function refereeInfo() {
+        return $this->hasMany(ApplicantRefereeInfo::class);
+    }
 }

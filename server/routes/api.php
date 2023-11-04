@@ -11,6 +11,7 @@ use App\Http\Controllers\Applicant\ApplicantOrgMembershipInfoController;
 use App\Http\Controllers\Applicant\ApplicantScholarshipInfoController;
 use App\Http\Controllers\Applicant\ApplicantOtherInfoController;
 use App\Http\Controllers\Applicant\ApplicantPublicationInfoController;
+use App\Http\Controllers\Applicant\ApplicantRefereeInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function ()
     Route::post('/create-scholarship-info', [ApplicantScholarshipInfoController::class, 'createApplicantScholarshipInfo']) -> name('applicants.create_scholarship');
     Route::post('/create-other-info', [ApplicantOtherInfoController::class, 'createApplicantOtherInfo']) -> name('applicants.create_misc');
     Route::post('/create-publication-info', [ApplicantPublicationInfoController::class, 'createApplicantPublicationInfo']) -> name('applicants.create_publication');
+    Route::post('/create-referee-info', [ApplicantRefereeInfoController::class, 'createApplicantRefereeInfo']) -> name('applicants.create_referee');
 
     //GET routes (/api/applicants/{id}/<endpoint>)
     Route::group(['prefix' => '{id}'], function () {
@@ -50,5 +52,6 @@ Route::group(['prefix' => 'applicants', 'namespace' => 'Applicant'], function ()
         Route::get('/scholarships', [ApplicantScholarshipInfoController::class, 'getApplicantScholarshipInfo']) -> name('applicants.scholarship');
         Route::get('/misc', [ApplicantOtherInfoController::class, 'getApplicantOtherInfo']) -> name('applicants.misc');
         Route::get('/publications', [ApplicantPublicationInfoController::class, 'getApplicantPublicationInfo']) -> name('applicants.publications');
+        Route::post('/referees', [ApplicantRefereeInfoController::class, 'getApplicantRefereeInfo']) -> name('applicants.referees');
     });
 });
