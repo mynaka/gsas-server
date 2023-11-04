@@ -44,4 +44,8 @@ class ApplicantBasicInfo extends Model {
     public function scholarshipInfo() {
         return $this->hasMany(ApplicantScholarshipInfo::class);
     }
+
+    public function otherInfo() {
+        return $this->hasOne(ApplicantOtherInfo::class);
+    }
 }
